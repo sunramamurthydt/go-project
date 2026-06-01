@@ -44,9 +44,10 @@ type MultilingualGreeter struct {
 // Override Greet — same idea as method overriding
 func (g MultilingualGreeter) Greet(name string) string {
 	greetings := map[string]string{
-		"spanish": "¡Hola " + name + "! Bienvenido 🌮",
-		"french":  "Bonjour " + name + "! Bienvenue 🥐",
-		"hindi":   "नमस्ते " + name + "! स्वागत है 🙏",
+		"spanish":    "¡Hola " + name + "! Bienvenido 🌮",
+		"french":     "Bonjour " + name + "! Bienvenue 🥐",
+		"hindi":      "नमस्ते " + name + "! स्वागत है 🙏",
+		"portuguese": "Olá " + name + "! Bem-vindo 🇧🇷",
 	}
 	if msg, ok := greetings[g.Language]; ok {
 		return msg
@@ -64,7 +65,7 @@ func NewGreeter(style string) GreeterService {
 	switch style {
 	case "formal":
 		return FormalGreeter{Prefix: "Good day,"}
-	case "spanish", "french", "hindi":
+	case "spanish", "french", "hindi", "portuguese":
 		return MultilingualGreeter{Language: style}
 	default:
 		return CasualGreeter{}
