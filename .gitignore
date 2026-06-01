@@ -1,0 +1,19 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build output
+go-project
+main
+
+# Test binary
+*.test
+
+# Go coverage
+*.out
+
+# VS Code
+.vscode/
